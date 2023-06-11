@@ -25,9 +25,4 @@ app.use("/general", generalRoutes);
 app.use("/management", managementRoutes);
 app.use("/sales", salesRoutes);
 
-const PORT = process.env.PORT || 9000;
-app.listen(process.env.PORT, () =>
-  console.log(`Listening to PORT ${process.env.PORT}`)
-);
-
 export default app;

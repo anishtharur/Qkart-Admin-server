@@ -5,7 +5,9 @@ import app from "./app.js";
 
 //data imports
 import User from "./models/User.js";
-import { dataUser } from "./data/index.js";
+import Product from "./models/Product.js";
+import ProductStat from "./models/ProductStat.js";
+import { dataUser, dataProduct, dataProductStat } from "./data/index.js";
 
 mongoose
   .connect(process.env.MONGODB_URL, {
@@ -16,6 +18,8 @@ mongoose
     console.log("MongoDB Connected");
     /*Only add data One time */
     //User.insertMany(dataUser);
+    // Product.insertMany(dataProduct);
+    // ProductStat.insertMany(dataProductStat);
   })
   .catch((err) => console.log(err));
 

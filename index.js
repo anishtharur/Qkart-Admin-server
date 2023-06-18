@@ -3,11 +3,18 @@ dotenv.config();
 import mongoose from "mongoose";
 import app from "./app.js";
 
-//data imports
+//data imports starts
 import User from "./models/User.js";
 import Product from "./models/Product.js";
 import ProductStat from "./models/ProductStat.js";
-import { dataUser, dataProduct, dataProductStat } from "./data/index.js";
+import Transaction from "./models/Transaction.js";
+import {
+  dataUser,
+  dataProduct,
+  dataProductStat,
+  dataTransaction,
+} from "./data/index.js";
+//data imports ends
 
 mongoose
   .connect(process.env.MONGODB_URL, {
@@ -20,6 +27,7 @@ mongoose
     //User.insertMany(dataUser);
     // Product.insertMany(dataProduct);
     // ProductStat.insertMany(dataProductStat);
+    //Transaction.insertMany(dataTransaction);
   })
   .catch((err) => console.log(err));
 

@@ -4,6 +4,7 @@ import {
   getAllCustomers,
   getAllTransactions,
   getTotalPages,
+  getAllGeographyData,
 } from "../services/client.service.js";
 
 export const getProducts = async (req, res) => {
@@ -49,6 +50,15 @@ export const getTransactions = async (req, res) => {
     const totalPages = await getTotalPages(search);
 
     res.status(200).json({ transactions, totalPages });
+  } catch (error) {
+    res.status(404).json(error.message);
+  }
+};
+
+export const getGeography = async (req, res) => {
+  try {
+    const locationWiseReport = await getAllGeographyData();
+    res.status(200).json(locationWiseReport);
   } catch (error) {
     res.status(404).json(error.message);
   }

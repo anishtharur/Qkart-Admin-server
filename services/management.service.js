@@ -31,7 +31,6 @@ export const getPerformanceById = async (id) => {
         return Transaction.findById(id);
       })
     );
-    console.log(saleTransactions);
     const filteredSaleTransactions = saleTransactions.filter(
       (transaction) => transaction !== null
     );
